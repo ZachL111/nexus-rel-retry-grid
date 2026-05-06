@@ -1,0 +1,73 @@
+{
+  "repo": "nexus-rel-retry-grid",
+  "language": "Solidity",
+  "category": "Reliability",
+  "goal": "Develop a Solidity command-oriented project for retry scenarios with round-trip fixtures, lossless normalization checks, and no network dependency.",
+  "review_model": {
+    "terms": [
+      "budget pressure",
+      "failure width",
+      "recovery gap",
+      "runbook drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "budget pressure",
+      "signal": 80,
+      "slack": 29,
+      "drag": 23,
+      "confidence": 53,
+      "score": 173,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "failure width",
+      "signal": 68,
+      "slack": 49,
+      "drag": 24,
+      "confidence": 72,
+      "score": 185,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "recovery gap",
+      "signal": 49,
+      "slack": 28,
+      "drag": 14,
+      "confidence": 51,
+      "score": 135,
+      "lane": "watch"
+    },
+    {
+      "name": "recovery",
+      "focus": "runbook drift",
+      "signal": 75,
+      "slack": 31,
+      "drag": 14,
+      "confidence": 46,
+      "score": 185,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "budget pressure",
+      "signal": 75,
+      "slack": 25,
+      "drag": 10,
+      "confidence": 57,
+      "score": 202,
+      "lane": "ship"
+    }
+  ]
+}
