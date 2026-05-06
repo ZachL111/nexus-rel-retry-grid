@@ -1,0 +1,7 @@
+name,demand,capacity,latency,risk,weight,score,decision,reason
+baseline,62,83,20,14,6,67,review,reliability baseline scenario exercises the review path for bounded failure handling
+pressure,78,74,27,18,9,50,review,reliability pressure scenario exercises the review path for bounded failure handling
+surge,99,96,21,15,12,168,review,reliability surge scenario exercises the review path for bounded failure handling
+degraded,73,61,37,28,8,-77,review,reliability degraded scenario exercises the review path for bounded failure handling
+recovery,90,101,16,10,11,201,accept,reliability recovery scenario keeps the local fixture within the modeled acceptance band
+boundary,77,81,25,16,10,79,review,reliability boundary scenario exercises the review path for bounded failure handling
